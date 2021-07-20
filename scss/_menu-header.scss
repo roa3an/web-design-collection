@@ -1,0 +1,32 @@
+/*
+STYLING
+-----------------------------------------------------------------------------*/
+.menu-header {
+	position: relative;
+
+	.__title {
+		position: absolute;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		z-index: 2;
+		color: #000000;
+		font-family: 'Roboto Slab', serif;
+		font-size: 2.5rem;
+	}
+	.__image {
+		position: absolute;
+		z-index: 1;
+		background-size: auto auto;
+		background-image: repeating-linear-gradient(0deg, transparent, transparent 1px, #ccc 1px, #ccc 2px);
+	}
+	.__video {
+		object-fit: cover;
+		object-position: top center;
+	}
+	.__title, .__image, .__video {
+		width: 100%;
+		height: 100vh;	
+	}
+}

@@ -1,0 +1,58 @@
+/*
+STYLING
+-----------------------------------------------------------------------------*/
+.menu-main {
+	padding: 2vw 5vw;
+
+	.items {
+		display: grid;
+		width: 100%;
+		gap: 2vw;
+		grid-template-rows: repeat(2, 21vw);
+		grid-template-columns: repeat(4, 21vw);
+	
+		.__image {
+			height: 100%;
+			width: 100%;
+			object-fit: cover;
+			background: no-repeat;
+			background-position:  center bottom;
+			filter: grayscale(100%);
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			text-align: center;
+
+			.__text {
+				background-image: linear-gradient(to right, transparent 0%, #ccc 50%, transparent 100%);
+
+				.--en {
+					font-family: 'Roboto Slab', serif;
+					font-size: 1.5rem;
+					padding-bottom: 0.25rem;
+				}
+				.--jp {
+					font-family: 'M PLUS Rounded 1c', sans-serif;
+					font-size: 1.25rem;
+				}
+			}
+			&:hover {
+				@media screen and (min-width: 600px) {
+					filter: grayscale(0);
+					transform: rotate(3deg);
+					box-shadow: 0 0 2rem #000;
+					transition-duration: 1ms;
+				}
+			}
+		}
+		.__image.--img-frame {
+			background-image: url(../images/frame.jpg);
+		}
+		.__image.--img-line {
+			background-image: url(../images/line.jpg);
+		}
+		.__image.--img-text {
+			background-image: url(../images/text.jpg);
+		}
+	}
+}

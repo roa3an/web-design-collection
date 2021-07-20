@@ -1,0 +1,62 @@
+/*
+STYLING
+-----------------------------------------------------------------------------*/
+.collection-header {
+	width: 100vw;
+	height: 100px;
+	line-height: 100px;
+	background-color: #000;
+	display: flex;
+	text-align: center;
+
+	.__title {
+		font-family: 'Roboto Slab', serif;
+		color: #d6a343;
+		font-size: 2rem;
+		width: 100vw;
+		padding-left: 130px;
+	}
+	.header-nav {
+		width: 130px;
+
+		.__top {
+			display: inline-block;
+			width: 100%;
+			font-family: 'Roboto Slab', serif;
+			color: #fff;
+			font-size: 1rem;
+			background-image: linear-gradient(90deg, #fff,  #fff 1%, #000 30%);
+			position: relative;
+			overflow: hidden;
+
+			&::before {
+				@include absolute($left:0, $bottom:0);
+				width: 500%;
+  				height: 500%;
+				content: "";
+				z-index: 0;
+				background-color: #fff;
+				transform-origin: left bottom;
+				transform: scale(0, 1) skewX(180deg);
+				transition: transform .5s;
+			}
+			&::after {
+				@include absolute($left:0, $bottom:0);
+				width: 100%;
+  				height: 100%;
+				content: "TOP";
+				z-index: -1;
+			}
+			&:hover {				
+				&::before {
+					z-index: 1;
+					transform: scale(1, 1) skewX(180deg);
+			  	}
+				&::after {
+					color: #000;
+					z-index: 2;
+				}
+			}
+		}
+	}
+}

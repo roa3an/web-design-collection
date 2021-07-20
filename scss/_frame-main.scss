@@ -1,0 +1,241 @@
+.frame-main {
+	display: grid;
+	justify-items: center;
+	align-items: center;
+	grid-auto-rows: 15vw;
+	grid-template-columns: repeat(3, 32%);
+	gap: 3vw;
+
+	.__item {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 100%;
+
+		&:hover {
+			box-shadow: 0 0 10px #c8cacc;
+		}
+		.__sample {
+			width: 80%;
+			height: 80%;
+		}
+		.__sample.--sample1 {
+			border: #000 10px solid;
+		}
+		.__sample.--sample2 {
+			border: #000 10px solid;
+			border-radius: 50px;
+		}
+		.__sample.--sample3 {
+			border: #000 10px double;
+		}
+		.__sample.--sample4 {
+			border: #000 10px dashed;
+		}
+		.__sample.--sample5 {
+			border-left: #000 30px solid;
+			background-color: #aaa;
+		}
+		.__sample.--sample6 {
+			box-shadow: 0 0 10px #000;
+		}
+		.__sample.--sample7 {
+			border: #000 1px solid;
+			box-shadow: 15px 15px #000;
+		}
+		.__sample.--sample8 {
+			background-color: #aaa;
+			border-bottom: #555 10px solid;
+			border-radius: 30px;
+		}
+		.__sample.--sample9 {
+			background-color: #aaa;
+			box-shadow: 0px 0px 0px 10px #aaa;
+    		border: dashed 5px #fff;
+		}
+		.__sample.--sample10 {
+			background-image: repeating-linear-gradient(45deg, #aaa, #aaa 5px, #888 5px, #888 10px);
+		}
+		.__sample.--sample11 {
+			border-top: #000 3px solid;
+			border-bottom: #000 3px solid;
+			position: relative;
+		
+			height: 60%;
+
+			&::before, &::after {
+				position: absolute;
+				content: "";
+				top: -10%;
+				width: 3px;
+				height: calc(100% + 20%);
+				background-color: #000;
+			}
+			&::before {
+				left: 5%;
+			}
+			&::after {
+				right: 5%;
+			}
+		}
+		.__sample.--sample12 {
+			position: relative;
+		
+			&::before, &::after {
+				position: absolute;
+				content: "";
+				width: 20%;
+				height: 20%;
+			}
+			&::before {
+				top: 0;
+				left: 0;
+				border-top: #000 solid 5px;
+				border-left: #000 solid 5px;
+			}
+			&::after {
+				bottom: 0;
+				right: 0;
+				border-bottom: #000 solid 5px;
+				border-right: #000 solid 5px;
+			}
+		}
+		.__sample.--sample13 {
+			background-image: radial-gradient(#aaa, #000)
+		}
+		.__sample.--sample14 {
+			background-image: linear-gradient( to right,#aaa, #000)
+		}
+		.__sample.--sample15 {
+			position: relative;
+			background-color: #aaa;
+			border-radius: 50%;
+
+			width: 65%;
+			height: 60%;
+		
+			&::before, &::after {
+				position: absolute;
+				content: "";
+				background-color: #aaa;
+				border-radius: 50%;
+			}
+			&::before {
+				bottom: 0;
+				left: -8%;
+				width: 20%;
+				height: 20%;
+			}
+			&::after {
+				bottom: -10%;
+				left: -15%;
+				width: 10%;
+				height: 10%;
+			}
+		}
+		.__sample.--sample16 {
+			position: relative;
+			background-color: #aaa;
+
+			height: 50%;
+		
+			&::after {
+				position: absolute;
+				content: "";
+				border: 20px transparent solid;
+				border-top: 20px #aaa solid;
+				top: 100%;
+				left: 10%;
+				width: 15%;
+				height: 15%;
+			}
+		}
+		.__sample.--sample17 {
+			position: relative;
+			background-color: #aaa;
+			box-shadow: 0 0 0 15px #aaa;
+			border: #fff dashed 3px;
+
+			width: 70%;
+			height: 70%;
+		
+			&::after {
+				position: absolute;
+				content: "";
+				border-width: 0 30px 30px 0;
+				border-style: solid;
+				border-color: #eee #fff;
+				box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15);
+				top: -19px;
+				right: -19px;
+			}
+		}
+		.__sample.--sample18 {
+			position: relative;
+			border: #aaa solid 3px;
+			border-radius: 10px;
+		
+			.__title18 {
+				position: absolute;
+				display: inline-block;
+				top: -10px;
+				left: 10px;
+				font-size: 1.5rem;
+				color: #aaa;
+				line-height: 1;
+				background-color: #fff;
+				padding: 0 0.8rem;
+			}
+			.__sentence18 {
+				font-size: 1.25rem;
+				color: #aaa;
+				padding: 1rem 1rem;
+			}
+		}
+		.__sample.--sample19 {
+			position: relative;
+			border: #aaa solid 3px;
+
+			height: 60%;
+		
+			.__title19 {
+				position: absolute;
+				display: inline-block;
+				top: -33px;
+				left: -3px;
+				font-size: 1.5rem;
+				color: #fff;
+				line-height: 1;
+				background-color: #aaa;
+				border-radius: 5px 5px 0 0;
+				padding: 0.25rem 0.8rem;
+			}
+			.__sentence19 {
+				font-size: 1.25rem;
+				color: #aaa;
+				padding: 1rem 1rem;
+			}
+		}
+		.__sample.--sample20 {
+			background-color: #aaa;
+
+			.__title20  {
+				font-size: 1.5rem;
+				text-align: center;
+				color: #fff;
+				line-height: 1;
+				background-color: #aaa;
+				padding: 0.5rem 0;
+			}
+			.__sentence20 {
+				font-size: 1.25rem;
+				color: #fff;
+				padding: 1rem 1rem;
+				background-color: #ccc;
+				
+				height: 80%;
+			}
+		}
+	}
+}

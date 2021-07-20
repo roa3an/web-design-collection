@@ -1,0 +1,412 @@
+/*
+VARIABLE
+-----------------------------------------------------------------------------*/
+/*MIXIN
+-----------------------------------------------------------------------------*/
+/*
+STYLING
+-----------------------------------------------------------------------------*/
+html {
+  height: 100%;
+  font-size: 16px;
+}
+
+body {
+  min-height: 100%;
+  font-family: sans-serif;
+  color: #000;
+}
+
+p {
+  line-height: 1.7;
+}
+
+/*
+SOUCE POPUP
+-----------------------------------------------------------------------------*/
+.c-container {
+  margin: 0 auto;
+  padding: 8vw 15vw;
+}
+
+.c-souce-popup {
+  background-color: #eee;
+  width: 70vw;
+  height: 80vh;
+  margin: auto;
+  box-sizing: border-box;
+  box-shadow: 0 0 5px #c8cacc;
+}
+
+.c-souce-popup__tab {
+  display: flex;
+  background-color: #000;
+}
+
+.c-souce-popup__category {
+  font-family: 'Roboto Slab', serif;
+  font-size: 1.2rem;
+  color: #d6a343;
+  background-color: #eee;
+  background-image: linear-gradient(90deg, #000, #000 90%, #d6a343);
+  text-align: center;
+  line-height: 50px;
+  list-style: none;
+  width: 100%;
+  height: 50px;
+  cursor: pointer;
+}
+
+.c-souce-popup__category.--active {
+  color: #000;
+  font-size: 1.5rem;
+  background-image: none;
+}
+
+.c-souce-popup__code {
+  display: none;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 1.2rem;
+  padding: 50px;
+  line-height: 1.7;
+}
+
+.c-souce-popup__code.--show {
+  display: block;
+}
+
+/*
+STYLING
+-----------------------------------------------------------------------------*/
+.collection-header {
+  width: 100vw;
+  height: 100px;
+  line-height: 100px;
+  background-color: #000;
+  display: flex;
+  text-align: center;
+}
+
+.collection-header .__title {
+  font-family: 'Roboto Slab', serif;
+  color: #d6a343;
+  font-size: 2rem;
+  width: 100vw;
+  padding-left: 130px;
+}
+
+.collection-header .header-nav {
+  width: 130px;
+}
+
+.collection-header .header-nav .__top {
+  display: inline-block;
+  width: 100%;
+  font-family: 'Roboto Slab', serif;
+  color: #fff;
+  font-size: 1rem;
+  background-image: linear-gradient(90deg, #fff, #fff 1%, #000 30%);
+  position: relative;
+  overflow: hidden;
+}
+
+.collection-header .header-nav .__top::before {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 500%;
+  height: 500%;
+  content: "";
+  z-index: 0;
+  background-color: #fff;
+  transform-origin: left bottom;
+  transform: scale(0, 1) skewX(180deg);
+  transition: transform .5s;
+}
+
+.collection-header .header-nav .__top::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "TOP";
+  z-index: -1;
+}
+
+.collection-header .header-nav .__top:hover::before {
+  z-index: 1;
+  transform: scale(1, 1) skewX(180deg);
+}
+
+.collection-header .header-nav .__top:hover::after {
+  color: #000;
+  z-index: 2;
+}
+
+.frame-main {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-auto-rows: 15vw;
+  grid-template-columns: repeat(3, 32%);
+  gap: 3vw;
+}
+
+.frame-main .__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.frame-main .__item:hover {
+  box-shadow: 0 0 10px #c8cacc;
+}
+
+.frame-main .__item .__sample {
+  width: 80%;
+  height: 80%;
+}
+
+.frame-main .__item .__sample.--sample1 {
+  border: #000 10px solid;
+}
+
+.frame-main .__item .__sample.--sample2 {
+  border: #000 10px solid;
+  border-radius: 50px;
+}
+
+.frame-main .__item .__sample.--sample3 {
+  border: #000 10px double;
+}
+
+.frame-main .__item .__sample.--sample4 {
+  border: #000 10px dashed;
+}
+
+.frame-main .__item .__sample.--sample5 {
+  border-left: #000 30px solid;
+  background-color: #aaa;
+}
+
+.frame-main .__item .__sample.--sample6 {
+  box-shadow: 0 0 10px #000;
+}
+
+.frame-main .__item .__sample.--sample7 {
+  border: #000 1px solid;
+  box-shadow: 15px 15px #000;
+}
+
+.frame-main .__item .__sample.--sample8 {
+  background-color: #aaa;
+  border-bottom: #555 10px solid;
+  border-radius: 30px;
+}
+
+.frame-main .__item .__sample.--sample9 {
+  background-color: #aaa;
+  box-shadow: 0px 0px 0px 10px #aaa;
+  border: dashed 5px #fff;
+}
+
+.frame-main .__item .__sample.--sample10 {
+  background-image: repeating-linear-gradient(45deg, #aaa, #aaa 5px, #888 5px, #888 10px);
+}
+
+.frame-main .__item .__sample.--sample11 {
+  border-top: #000 3px solid;
+  border-bottom: #000 3px solid;
+  position: relative;
+  height: 60%;
+}
+
+.frame-main .__item .__sample.--sample11::before, .frame-main .__item .__sample.--sample11::after {
+  position: absolute;
+  content: "";
+  top: -10%;
+  width: 3px;
+  height: calc(100% + 20%);
+  background-color: #000;
+}
+
+.frame-main .__item .__sample.--sample11::before {
+  left: 5%;
+}
+
+.frame-main .__item .__sample.--sample11::after {
+  right: 5%;
+}
+
+.frame-main .__item .__sample.--sample12 {
+  position: relative;
+}
+
+.frame-main .__item .__sample.--sample12::before, .frame-main .__item .__sample.--sample12::after {
+  position: absolute;
+  content: "";
+  width: 20%;
+  height: 20%;
+}
+
+.frame-main .__item .__sample.--sample12::before {
+  top: 0;
+  left: 0;
+  border-top: #000 solid 5px;
+  border-left: #000 solid 5px;
+}
+
+.frame-main .__item .__sample.--sample12::after {
+  bottom: 0;
+  right: 0;
+  border-bottom: #000 solid 5px;
+  border-right: #000 solid 5px;
+}
+
+.frame-main .__item .__sample.--sample13 {
+  background-image: radial-gradient(#aaa, #000);
+}
+
+.frame-main .__item .__sample.--sample14 {
+  background-image: linear-gradient(to right, #aaa, #000);
+}
+
+.frame-main .__item .__sample.--sample15 {
+  position: relative;
+  background-color: #aaa;
+  border-radius: 50%;
+  width: 65%;
+  height: 60%;
+}
+
+.frame-main .__item .__sample.--sample15::before, .frame-main .__item .__sample.--sample15::after {
+  position: absolute;
+  content: "";
+  background-color: #aaa;
+  border-radius: 50%;
+}
+
+.frame-main .__item .__sample.--sample15::before {
+  bottom: 0;
+  left: -8%;
+  width: 20%;
+  height: 20%;
+}
+
+.frame-main .__item .__sample.--sample15::after {
+  bottom: -10%;
+  left: -15%;
+  width: 10%;
+  height: 10%;
+}
+
+.frame-main .__item .__sample.--sample16 {
+  position: relative;
+  background-color: #aaa;
+  height: 50%;
+}
+
+.frame-main .__item .__sample.--sample16::after {
+  position: absolute;
+  content: "";
+  border: 20px transparent solid;
+  border-top: 20px #aaa solid;
+  top: 100%;
+  left: 10%;
+  width: 15%;
+  height: 15%;
+}
+
+.frame-main .__item .__sample.--sample17 {
+  position: relative;
+  background-color: #aaa;
+  box-shadow: 0 0 0 15px #aaa;
+  border: #fff dashed 3px;
+  width: 70%;
+  height: 70%;
+}
+
+.frame-main .__item .__sample.--sample17::after {
+  position: absolute;
+  content: "";
+  border-width: 0 30px 30px 0;
+  border-style: solid;
+  border-color: #eee #fff;
+  box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15);
+  top: -19px;
+  right: -19px;
+}
+
+.frame-main .__item .__sample.--sample18 {
+  position: relative;
+  border: #aaa solid 3px;
+  border-radius: 10px;
+}
+
+.frame-main .__item .__sample.--sample18 .__title18 {
+  position: absolute;
+  display: inline-block;
+  top: -10px;
+  left: 10px;
+  font-size: 1.5rem;
+  color: #aaa;
+  line-height: 1;
+  background-color: #fff;
+  padding: 0 0.8rem;
+}
+
+.frame-main .__item .__sample.--sample18 .__sentence18 {
+  font-size: 1.25rem;
+  color: #aaa;
+  padding: 1rem 1rem;
+}
+
+.frame-main .__item .__sample.--sample19 {
+  position: relative;
+  border: #aaa solid 3px;
+  height: 60%;
+}
+
+.frame-main .__item .__sample.--sample19 .__title19 {
+  position: absolute;
+  display: inline-block;
+  top: -33px;
+  left: -3px;
+  font-size: 1.5rem;
+  color: #fff;
+  line-height: 1;
+  background-color: #aaa;
+  border-radius: 5px 5px 0 0;
+  padding: 0.25rem 0.8rem;
+}
+
+.frame-main .__item .__sample.--sample19 .__sentence19 {
+  font-size: 1.25rem;
+  color: #aaa;
+  padding: 1rem 1rem;
+}
+
+.frame-main .__item .__sample.--sample20 {
+  background-color: #aaa;
+}
+
+.frame-main .__item .__sample.--sample20 .__title20 {
+  font-size: 1.5rem;
+  text-align: center;
+  color: #fff;
+  line-height: 1;
+  background-color: #aaa;
+  padding: 0.5rem 0;
+}
+
+.frame-main .__item .__sample.--sample20 .__sentence20 {
+  font-size: 1.25rem;
+  color: #fff;
+  padding: 1rem 1rem;
+  background-color: #ccc;
+  height: 80%;
+}
+/*# sourceMappingURL=frame.css.map */
